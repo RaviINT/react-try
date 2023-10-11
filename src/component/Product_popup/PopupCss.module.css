@@ -1,0 +1,72 @@
+.popupBg{
+    width:100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    position: fixed;
+    z-index: 99999;
+}
+.PopupBox{
+    width: 600px;
+    height: 500px;
+    border-radius: 15px;
+    background: #D5D9F5;
+    margin: auto;
+    display: block;
+    box-sizing: border-box;
+    padding: 25px;
+    max-width: 92%;
+}
+.pipupTitle{
+    font-size: 30px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+.clocePopup{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.5);
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    display: block;
+    position: absolute;
+    top: -36px;
+    right: -37px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+.popupBody{
+    float: left;
+    width:100%;
+    box-sizing: border-box;
+    padding: 35px 0;
+}
+.popupBody input, .popupBody select{
+    width:100%;
+    border:none;
+    outline: none;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.popupBody select{
+    color: #888;
+}
+.popupBody input[type='submit']{
+    background: #F0504B;
+    border-radius: 30px;
+    height: 50px;
+    width: 150px;
+    color: #fff;
+    font-size: 15px;
+}

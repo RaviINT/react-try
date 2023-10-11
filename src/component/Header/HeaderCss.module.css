@@ -1,0 +1,110 @@
+header{
+    background: #fff;
+    margin-top: 0;
+    height: auto;
+    float: left;
+    width: 100%;
+}
+.cpheCon{
+    position: relative;
+    width: 88.999vw;
+    margin: 1.44vh auto; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cpheCon .headerMenu{
+    display: flex;
+    flex-direction: row;
+    gap:3.58vw;
+    list-style: none;
+}
+.cpheCon .logo{
+    width:13.99vw;
+    height: auto;
+}
+.cpheCon .headerMenu li a{
+    font-size: 1.3vw;
+    color: #A47DF0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5vw;
+}
+.cpheCon .headerMenu li a img{
+    width:2.0833vw;
+    height:auto;
+    opacity: 0.5;
+}
+.cpheCon .headerMenu li a:hover, .cpheCon .headerMenu li.active a{
+    color: #502e92;
+}
+.cpheCon .headerMenu li a:hover img,.cpheCon .headerMenu li.active a img{
+    opacity: 1;
+}
+@media (max-width: 480px) {
+
+}
+ 
+/* Media Query for low resolution Tablets, Ipads */
+@media(max-width: 767px) {
+     .cpheCon .headerMenu{
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        margin: 0;
+        background: #502E92;
+        border-radius: 30px 30px 0 0;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 1.3vh 7.3vw;
+    }
+   .cpheCon{
+        width: 100vw;
+    }
+    .cpheCon .logo{
+        width: 32.99%;
+        height: auto;
+        margin: auto;
+    }
+
+    .cpheCon .headerMenu li a{
+        font-size:4vw;
+        color: #c4b5e4;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 0.5vw;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .cpheCon .headerMenu li a:hover , .cpheCon .headerMenu li.active a{
+        color: #fff;
+    }
+    .cpheCon .headerMenu li a img{
+        order: 1;
+        width:7vw;
+        filter:invert(1) brightness(2) hue-rotate(180deg);
+        opacity: 1;
+    }
+    .cpheCon .headerMenu li a span{
+        order: 2;
+    }
+
+}
+ 
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+ 
+}
+ 
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+  
+}
+ 
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+
+}
