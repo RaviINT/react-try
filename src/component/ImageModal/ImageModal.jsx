@@ -5,6 +5,8 @@ import Modal from "react-modal";
 import styles from "./style.module.css";
 
 function ImageCaptureModal({ open, handleModal }) {
+  const [photo, setPhoto] = useState(null);
+  console.log(photo);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -21,6 +23,25 @@ function ImageCaptureModal({ open, handleModal }) {
 
     openFrontCamera();
   }, []);
+
+  const capturePhoto = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = videoRef.current.videoWidth;
+    canvas.height = videoRef.current.videoHeight;
+    canvas.getContext("2d").drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+    const capturedPhoto = canvas.toDataURL("image/jpeg");
+    setPhoto(capturedPhoto);
+    const base64WithoutPrefix = capturedPhoto.replace(/^data:[^;]+;base64,/, "");
+    const blob = new Blob([atob(base64WithoutPrefix)], {
+      type: "application/octet-stream",
+    });
+    const file = new File([blob], "card.png", {
+      type: "application/octet-stream",
+    });
+
+    // Now you can use the 'file' as needed, for example, upload it to a server
+    console.log("Converted file:", file);
+  };
   return (
     <Modal
       ariaHideApp={false}
@@ -43,13 +64,10 @@ function ImageCaptureModal({ open, handleModal }) {
       }}
     >
       <div>
-        <div>
-          <video ref={videoRef} autoPlay playsInline />
-        </div>
-        <div>
-          <div onClick={handleModal}>X</div>
-          <div>Camera</div>
-        </div>
+        <h1>Front Camera Photo Capture</h1>
+        <video ref={videoRef} autoPlay playsInline />
+        <button onClick={capturePhoto}>Capture Photo</button>
+        {photo && <img src={photo} alt="Captured" />}
       </div>
     </Modal>
   );
